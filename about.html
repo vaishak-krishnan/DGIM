@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - DGIM Algorithm</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding-top: 70px;
+      padding-bottom: 50px;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="index.html">DGIM Algorithm</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h1>Counting the Number of 1's in the Data Stream</h1>
+    <h2>DGIM algorithm (Datar-Gionis-Indyk-Motwani Algorithm)</h2>
+    <p>Designed to find the number 1’s in a data set. This algorithm uses O(log²N) bits to represent a window of N bits, allowing to estimate the number of 1’s in the window with an error of no more than 50%.</p>
+    <p>So this algorithm gives a 50% precise answer.</p>
+    <p>In DGIM algorithm, each bit that arrives has a timestamp for the position at which it arrives. If the first bit has a timestamp 1, the second bit has a timestamp 2 and so on. The positions are recognized with the window size N (the window sizes are usually taken as a multiple of 2). The windows are divided into buckets consisting of 1’s and 0's.</p>
+    <h3>RULES FOR FORMING THE BUCKETS:</h3>
+    <ul>
+      <li>The right side of the bucket should always start with 1. (if it starts with a 0, it is to be neglected). E.g. · 1001011 → a bucket of size 4, having four 1’s and starting with 1 on its right end.</li>
+      <li>Every bucket should have at least one 1, else no bucket can be formed.</li>
+      <li>All buckets should be in powers of 2.</li>
+      <li>The buckets cannot decrease in size as we move to the left. (move in increasing order towards left).</li>
+    </ul>
+    <p>Implemented by: Vaishak C Krishnan<br>
+    M.Tech 2nd Semester<br>
+    Data Science and Artificial Intelligence</p>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; Vaishak C Krishnan 2024</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
